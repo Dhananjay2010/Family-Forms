@@ -7,6 +7,7 @@ import * as yup from "yup";
 export const AddProduct = ({ onSubmit }) => {
   const onSubmitHandler = (data) => {
     onSubmit(data);
+    reset();
   };
   const schema = yup.object().shape({
     name: yup.string().required("Name is required"),
@@ -20,6 +21,7 @@ export const AddProduct = ({ onSubmit }) => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(schema),
   });
@@ -43,7 +45,7 @@ export const AddProduct = ({ onSubmit }) => {
         <InputField
           label="price"
           name="price"
-            type="number"
+          type="number"
           register={register}
           error={errors?.price}
         />

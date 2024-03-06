@@ -6,7 +6,7 @@ import { Product } from "./pages/Posts/Products";
 function App() {
   return (
     <>
-      <FamilyInfo />
+      {/* <FamilyInfo /> */}
       <Product />
     </>
   );
